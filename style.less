@@ -1,0 +1,64 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+}
+.slider{
+    width: 1024px;
+    height: 512px;
+    position: relative;
+    background: lightgray;
+
+    &__before{
+        width: 512px;
+        height: 512px;
+        position: absolute;
+        z-index: 2;
+        background-size: cover;
+        background: url("./assets/before.jpg") no-repeat center center fixed;
+    }
+
+    &__after{
+        width: 1024px;
+        height: 512px;
+        position: absolute;
+        background-size: cover;
+        background: url("./assets/after.jpg") no-repeat center center fixed;
+    }
+
+    &__resize{
+        width: 5px;
+        position: absolute;
+        height: 100%;
+        right: 0;
+        top: 0;
+        background-color: #000;
+        z-index: 3;
+        cursor: e-resize;
+
+        &:before{
+            content: '<';
+            position: absolute;
+            font-size: 40px;
+            font-weight: 900;
+            top: 50%;
+            right: 5px;
+        }
+        &:after{
+            content: '>';
+            left: 5px;
+            position: absolute;
+            font-size: 40px;
+            font-weight: 900;
+            top: 50%;
+        }
+    }
+}
